@@ -6,26 +6,25 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 const Home = () => {
 
   return (
-    <div className="flex flex-col min-h-screen mt-10 gap-9 text-white w-full items-center">
-      <section>
-        <Tabs defaultValue="account" className="w-full flex flex-col items-center">
-          <TabsList>
-            <TabsTrigger value="quick-add">Quick Add</TabsTrigger>
-            <TabsTrigger value="detailed-add">Detailed Add</TabsTrigger>
-          </TabsList>
-          <TabsContent value="quick-add">
-            how much? date?
-          </TabsContent>
-          <TabsContent value="detailed-add">
-            how much? which category? details? date?
-          </TabsContent>
-        </Tabs>
+    <div className="flex flex-col min-h-screen gap-9 text-black w-full items-center">
+      <section className="w-full">
+        <h1>Nav bar</h1>
       </section>
 
-      {/* <h1>Quick Sumary - how your doing this month, categories</h1>
-      <h1>recent expenses</h1> */}
+      <section>
+        <h1>Quick Summary (grid view for desktop)</h1>
+        <h2>Total Spending / Total Budget - for current month</h2>
+        <h2>Spendings per category</h2>
+        <h2>Budget left (overall and per categories)- mothly/weekly/daily</h2>
+        <h2>Graph amrking all expenses with dates of the month</h2>
+        <h2>Recent spending list - minimalist list</h2>
+        total expenses, pie chart
+        budget left for day, month
+        recent expenses
+      </section>
     </div>
   )
 }
 
 export default Home;
+

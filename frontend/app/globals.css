@@ -8,8 +8,8 @@
   box-sizing: border-box;
 }
 
-html {
-  background-color: #101114;
+body {
+  background-color: #FFDBB5;
 }
 
 @layer utilities {
@@ -61,6 +61,7 @@ html {
   .text-32 {
     @apply text-[32px] leading-normal;
   }
+
 }
 
 /* ===== custom classes ===== */
