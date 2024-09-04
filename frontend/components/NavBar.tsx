@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import NextLink from "next/link";
 import { Box, Container, Flex, Heading, IconButton, Link, Menu, MenuButton, MenuItem, MenuList, Stack } from "@chakra-ui/react";
@@ -38,11 +38,6 @@ const NavBar = (props:navbar_props) => {
     const { path } = props;
     const [isMounted, setIsMounted] = useState(false);
 
-    useEffect(() => {
-        // Set a flag indicating the component is mounted on the client
-        setIsMounted(true);
-    }, []);
-
     return (
         <Box
             position="fixed"
@@ -50,7 +45,6 @@ const NavBar = (props:navbar_props) => {
             w="100%"
             style={{ backdropFilter: 'blur(10px'}}
             zIndex={1}
-            {...props}
         >
             <Container 
                 display="flex" 
@@ -65,44 +59,43 @@ const NavBar = (props:navbar_props) => {
                         <Logo />
                     </Heading>
                 </Flex>
-                {isMounted && (
-                    <Stack
-                        direction={{ base: "column", md: "row" }}
-                        display={{ base: "none", md: "flex" }}
-                        width={{ base: "full", md: "auto" }}
-                        alignItems="center"
-                        flexGrow={0.25}
-                        mt={{ base: 4, md: 0 }}
-                    >
-                        <LinkItem href="/add-expense" path={path}>
-                            Add Expense
-                        </LinkItem>
-                        <LinkItem href="/history" path={path}>
-                            History
-                        </LinkItem>
-                        <LinkItem href="/settings" path={path}>
-                            Settings
-                        </LinkItem>
-                    </Stack>
-                )}
-                {/* <Box flex={1} textAlign="right">
-                    {isMounted && (
-                        <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
-                            <Menu>
-                                <MenuButton as={IconButton} icon={<HamburgerIcon />} variant="outline" aria-label="Options" />
-                                <MenuList>
-                                    <NextLink href="/" passHref>
-                                        <MenuItem>About</MenuItem>
-                                    </NextLink>
-                                    <NextLink href="/works" passHref>
-                                        <MenuItem>Works</MenuItem>
-                                    </NextLink>
 
-                                </MenuList>
-                            </Menu>
-                        </Box>
-                    )}
-                </Box> */}
+                <Stack
+                    direction={{ base: "column", md: "row" }}
+                    display={{ base: "none", md: "flex" }}
+                    width={{ base: "full", md: "auto" }}
+                    alignItems="center"
+                    justifyContent="flex-end"
+                    flexGrow={0.25}
+                    mt={{ base: 4, md: 0 }}
+                >
+                    <LinkItem href="/add-expense" path={path}>
+                        Add Expense
+                    </LinkItem>
+                    <LinkItem href="/history" path={path}>
+                        History
+                    </LinkItem>
+                    <LinkItem href="/settings" path={path}>
+                        Settings
+                    </LinkItem>
+                </Stack>
+        
+                <Box textAlign="right" mr={5} display={{ base: 'inline-block', md: 'none' }}>
+                    <Menu>
+                        <MenuButton as={IconButton} icon={<HamburgerIcon />} aria-label="Options" bg={'light_brown'}/>
+                        <MenuList bg={'light_brown'}>
+                            <NextLink href="/add-expense">
+                                <MenuItem bg={'light_brown'} _hover={{ border: "1px solid white" }}>Add Expense</MenuItem>
+                            </NextLink>
+                            <NextLink href="/history">
+                                <MenuItem bg={'light_brown'} _hover={{ border: "1px solid white" }}>History</MenuItem>
+                            </NextLink>
+                            <NextLink href="/settings">
+                                <MenuItem bg={'light_brown'} _hover={{ border: "1px solid white" }}>Settings</MenuItem>
+                            </NextLink>
+                        </MenuList>
+                    </Menu>
+                </Box>
             </Container>
         </Box>
     )

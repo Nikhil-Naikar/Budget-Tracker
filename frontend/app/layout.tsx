@@ -1,14 +1,6 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+
 import "./globals.css";
 import { ChakraUiProvider } from "@/providers/ChakraUiProvider";
-
-
-const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "Budget Tracker"
-};
 
 export default function RootLayout({
   children,
@@ -16,7 +8,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <title>Budget Tracker</title>
         <link rel="icon" href="./icons/money-bag.png" type="icon" />
