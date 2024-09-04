@@ -1,17 +1,9 @@
-"use client"
-
-import { NavBar } from "@/components/NavBar";
-
 
 const Home = () => {
 
   return (
     <div className="flex flex-col min-h-screen gap-9 text-black w-full items-center">
-      <div className="flex flex-col gap-5 w-100">
-        <section className="mt-3">
-          <NavBar />
-        </section>
-
+      <div className="flex flex-col gap-5 w-100 pt-14 pb-8">
         <section>
           <h1>Quick Summary (grid view for desktop)</h1>
           <h2>Total Spending / Total Budget - for current month</h2>
