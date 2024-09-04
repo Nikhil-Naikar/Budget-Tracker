@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ChakraUiProvider } from "@/providers/ChakraUiProvider";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -16,7 +17,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head>
+        <title>Budget Tracker</title>
+        <link rel="icon" href="./icons/money-bag.png" type="icon" />
+      </head>
+      <body>
+        <ChakraUiProvider>{children}</ChakraUiProvider>
+      </body>
     </html>
-  );
+  )
 }
