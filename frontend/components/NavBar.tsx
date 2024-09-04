@@ -80,7 +80,7 @@ const NavBar = (props:navbar_props) => {
                     </LinkItem>
                 </Stack>
         
-                <Box textAlign="right" mr={5} display={{ base: 'inline-block', md: 'none' }}>
+                <Box textAlign="right" mr={3} display={{ base: 'inline-block', md: 'none' }}>
                     <Menu>
                         <MenuButton as={IconButton} icon={<HamburgerIcon />} aria-label="Options" bg={'light_brown'}/>
                         <MenuList bg={'light_brown'}>

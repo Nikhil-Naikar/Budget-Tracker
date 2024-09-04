@@ -1,14 +1,24 @@
+import { Flex } from "@chakra-ui/react";
+import Chart from "@/components/Chart";
 
 const Home = () => {
 
   return (
-    <div>
-      <h1>Quick Summary (grid view for desktop)</h1>
-      <h2>Total Spending / Total Budget - for current month</h2>
-      <h2>Spendings per category</h2>
-      <h2>Budget left (overall and per categories)- mothly/weekly/daily</h2>
-      <h2>Graph amrking all expenses with dates of the month</h2>
-      <h2>Recent spending list - minimalist list</h2>
+    <div className="flex flex-col gap-10">
+      <Flex 
+        direction={"column"}
+        alignItems="center"
+      >
+        <Chart />
+      </Flex>
+      <section>
+        <h2>Total Spending / Total Budget - for current month</h2>
+        <h2>Graph marking all expenses with dates of the month</h2>
+      </section>
+      <section>
+        <h2>Spendings and budget left per category</h2>
+        <h2>Recent spending list - minimalist list</h2>
+      </section>
     </div>
     
   )
