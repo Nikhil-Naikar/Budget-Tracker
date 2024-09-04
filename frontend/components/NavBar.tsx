@@ -4,6 +4,7 @@ import NextLink from "next/link";
 import { Box, Container, Flex, Heading, IconButton, Link, Menu, MenuButton, MenuItem, MenuList, Stack } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { useEffect, useState } from 'react';
+import Logo from "./ui/Logo";
 
 interface listitems_Props{
     href:string,
@@ -25,8 +26,7 @@ const LinkItem = (props:listitems_Props) => {
             <Box
                 as="span"
                 p={2}
-                bg={active ? 'glassTeal' : undefined}
-                // color={active ? 'transparent' : activeColor}
+                color={active ? 'transparent' : 'light_brown'}
             >
                 {children}
             </Box>
@@ -62,7 +62,7 @@ const NavBar = (props:navbar_props) => {
             >
                 <Flex align="center" mr={5}>
                     <Heading as="h1" size="lg" letterSpacing={"tighter"}>
-                        <h1>temp</h1>
+                        <Logo />
                     </Heading>
                 </Flex>
                 {isMounted && (
@@ -71,18 +71,21 @@ const NavBar = (props:navbar_props) => {
                         display={{ base: "none", md: "flex" }}
                         width={{ base: "full", md: "auto" }}
                         alignItems="center"
-                        flexGrow={1}
+                        flexGrow={0.25}
                         mt={{ base: 4, md: 0 }}
                     >
-                        <LinkItem href="/works" path={path}>
-                            Works
+                        <LinkItem href="/add-expense" path={path}>
+                            Add Expense
                         </LinkItem>
-                        {/* <LinkItem href="/contact-me" path={path}>
-                            Contact Me 
-                        </LinkItem> */}
+                        <LinkItem href="/history" path={path}>
+                            History
+                        </LinkItem>
+                        <LinkItem href="/settings" path={path}>
+                            Settings
+                        </LinkItem>
                     </Stack>
                 )}
-                <Box flex={1} textAlign="right">
+                {/* <Box flex={1} textAlign="right">
                     {isMounted && (
                         <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
                             <Menu>
@@ -94,14 +97,12 @@ const NavBar = (props:navbar_props) => {
                                     <NextLink href="/works" passHref>
                                         <MenuItem>Works</MenuItem>
                                     </NextLink>
-                                    {/* <NextLink href="/contact-me" passHref>
-                                        <MenuItem>Contact Me</MenuItem>
-                                    </NextLink> */}
+
                                 </MenuList>
                             </Menu>
                         </Box>
                     )}
-                </Box>
+                </Box> */}
             </Container>
         </Box>
     )

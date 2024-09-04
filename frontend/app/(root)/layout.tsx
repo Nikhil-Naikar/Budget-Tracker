@@ -8,11 +8,13 @@ export default function RootLayout({children,}: Readonly<{children: React.ReactN
   const pathname = usePathname()
   
   return (
-   <div className="relative flex flex-col">
-      <main className="relative flex">
-        <NavBar path={pathname}/>
-        {children}
-      </main>
-   </div>
+   <main className="relative flex flex-col">
+      <NavBar path={pathname}/>
+      <div className="flex flex-col min-h-screen text-black w-full items-center">
+        <section className="flex flex-col gap-5 w-200 pt-20 pb-10">
+          {children}
+        </section>
+      </div>
+   </main>
   );
 }
