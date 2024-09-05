@@ -30,6 +30,18 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer"
 
+import {
+  Sheet,
+  SheetContent,
+  SheetFooter,
+  SheetClose,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
+
+
 
 import { ChartConfig, ChartContainer } from "@/components/ui/chart"
 import { Button } from "@chakra-ui/react"
@@ -55,7 +67,7 @@ export function Chart() {
   const totalBudget = 3500;
 
   return (
-    <Card className="flex flex-col w-full">
+    <Card className="flex flex-col sm:w-sm md:w-full">
       <CardHeader className="items-center pb-0">
         <CardTitle>Hello Stephanie</CardTitle>
         <CardDescription>Nice! You are still below the budget</CardDescription>
@@ -117,23 +129,34 @@ export function Chart() {
         <div className="flex items-center gap-2 font-medium leading-none">
             Budget Left: $20
         </div>
-        <Drawer>
-          <DrawerTrigger className="bg-light_brown text-white rounded-full h-auto w-auto px-4 py-2 hover:border-2 hover:border-white transition">
-            Quick Add Expense
-          </DrawerTrigger>
-          <DrawerContent>
-            <DrawerHeader>
-              <DrawerTitle>So, how much do you spend or earn?</DrawerTitle>
-              <DrawerDescription><QuickAddForm /></DrawerDescription>
-            </DrawerHeader>
-            <DrawerFooter>
-            <DrawerClose>
-                <Button bg={'light_brown'}>Submit</Button>
-                <Button bg={'light_brown'}>Cancel</Button>
-              </DrawerClose>
-            </DrawerFooter>
-          </DrawerContent>
-        </Drawer>
+        <Sheet>
+          <SheetTrigger className="bg-light_brown text-white rounded-full h-auto w-auto px-4 py-2 hover:border-2 hover:border-white">Quick Add</SheetTrigger>
+          <SheetContent className=" h-[45vh] flex flex-col items-center bg-cream" side={"top"}>
+            <SheetHeader className="flex flex-col items-center justify-center">
+              <SheetTitle>Quick Add</SheetTitle>
+              <SheetDescription>
+                Please select if amount is expense or income
+              </SheetDescription>
+            </SheetHeader>
+            <QuickAddForm/>
+            <SheetFooter>
+              <SheetClose className="flex gap-5">
+                <Button 
+                  bg="light_brown" 
+                  color="white" 
+                  _hover={{ 
+                    border: "2px solid", 
+                    borderColor: "white" 
+                  }} 
+                  border="2px solid transparent" // Ensure default border is transparent
+                >
+                  Submit
+                </Button>
+              </SheetClose>
+            </SheetFooter>
+          </SheetContent>
+        </Sheet>
+
 
       </CardFooter>
     </Card>
