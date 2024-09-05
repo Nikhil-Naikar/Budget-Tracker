@@ -17,7 +17,23 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+
+
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer"
+
+
 import { ChartConfig, ChartContainer } from "@/components/ui/chart"
+import { Button } from "@chakra-ui/react"
+import QuickAddForm from "./forms/QuickAddForm"
 
 export const description = "A radial chart with a custom shape"
 
@@ -101,6 +117,24 @@ export function Chart() {
         <div className="flex items-center gap-2 font-medium leading-none">
             Budget Left: $20
         </div>
+        <Drawer>
+          <DrawerTrigger className="bg-light_brown text-white rounded-full h-auto w-auto px-4 py-2 hover:border-2 hover:border-white transition">
+            Quick Add Expense
+          </DrawerTrigger>
+          <DrawerContent>
+            <DrawerHeader>
+              <DrawerTitle>So, how much do you spend or earn?</DrawerTitle>
+              <DrawerDescription><QuickAddForm /></DrawerDescription>
+            </DrawerHeader>
+            <DrawerFooter>
+            <DrawerClose>
+                <Button bg={'light_brown'}>Submit</Button>
+                <Button bg={'light_brown'}>Cancel</Button>
+              </DrawerClose>
+            </DrawerFooter>
+          </DrawerContent>
+        </Drawer>
+
       </CardFooter>
     </Card>
   )
