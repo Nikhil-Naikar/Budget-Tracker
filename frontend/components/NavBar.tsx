@@ -36,13 +36,13 @@ const LinkItem = (props:listitems_Props) => {
 
 const NavBar = (props:navbar_props) => {
     const { path } = props;
-    const [isMounted, setIsMounted] = useState(false);
 
     return (
         <Box
             position="fixed"
             as="nav"
             w="100%"
+            bg="rgba(255, 219, 181, 0.8)"
             style={{ backdropFilter: 'blur(10px'}}
             zIndex={1}
         >

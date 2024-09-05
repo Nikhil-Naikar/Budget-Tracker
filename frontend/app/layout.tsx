@@ -1,4 +1,5 @@
 
+import Scroll from "@/components/Scroll";
 import "./globals.css";
 import { ChakraUiProvider } from "@/providers/ChakraUiProvider";
 
@@ -16,6 +17,7 @@ export default function RootLayout({
 
       </head>
       <body>
+        <Scroll />
         <ChakraUiProvider>{children}</ChakraUiProvider>
       </body>
     </html>
