@@ -13,7 +13,8 @@ const colors = {
   light_brown: '#6C4E31',
   very_light_brown: '#A67B5B',
   dark_brown: '#603F26',
-  cream: '#FFDBB5'
+  cream: '#FFDBB5',
+  white:'	#ffffff'
 }
 
 

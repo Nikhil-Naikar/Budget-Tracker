@@ -82,16 +82,16 @@ const NavBar = (props:navbar_props) => {
         
                 <Box textAlign="right" mr={3} display={{ base: 'inline-block', md: 'none' }}>
                     <Menu>
-                        <MenuButton as={IconButton} icon={<HamburgerIcon />} aria-label="Options" bg={'light_brown'}/>
+                        <MenuButton as={IconButton} icon={<HamburgerIcon />} aria-label="Options" bg={'light_brown'} color={'white'}/>
                         <MenuList bg={'light_brown'}>
                             <NextLink href="/add-expense">
-                                <MenuItem bg={'light_brown'} _hover={{ border: "1px solid white" }}>Add Expense</MenuItem>
+                                <MenuItem bg={'light_brown'} textColor={'white'} _hover={{ border: "1px solid white" }}>Add Expense</MenuItem>
                             </NextLink>
                             <NextLink href="/history">
-                                <MenuItem bg={'light_brown'} _hover={{ border: "1px solid white" }}>History</MenuItem>
+                                <MenuItem bg={'light_brown'} textColor={'white'} _hover={{ border: "1px solid white" }}>History</MenuItem>
                             </NextLink>
                             <NextLink href="/settings">
-                                <MenuItem bg={'light_brown'} _hover={{ border: "1px solid white" }}>Settings</MenuItem>
+                                <MenuItem bg={'light_brown'} textColor={'white'} _hover={{ border: "1px solid white" }}>Settings</MenuItem>
                             </NextLink>
                         </MenuList>
                     </Menu>

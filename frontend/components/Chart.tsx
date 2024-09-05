@@ -156,8 +156,6 @@ export function Chart() {
             </SheetFooter>
           </SheetContent>
         </Sheet>
-
-
       </CardFooter>
     </Card>
   )
