@@ -74,16 +74,11 @@ export function Chart() {
     // Simulate a data fetch
     setTimeout(() => {
       setLoading(false); // Set loading to false after data is "loaded"
-    }, 2000); // Adjust timeout as needed
+    }, 1000); // Adjust timeout as needed
   }, []);
 
   return (
-    <Card className="flex flex-col sm:w-sm md:w-full">
-      <CardHeader className="items-center pb-0">
-        <CardTitle>Hello Stephanie</CardTitle>
-        <CardDescription>Nice! You are still below the budget</CardDescription>
-      </CardHeader>
-      
+    <Card className="flex flex-col sm:w-sm md:w-[400px] border border-dark_brown">
       {loading ? (
         <LoaderSpinner />
       ) : (
