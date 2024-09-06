@@ -13,6 +13,7 @@ import { ScrollArea } from "./ui/scroll-area";
 import { Flex, Heading } from "@chakra-ui/react";
 import transactions from "@/constants/dummyExpenses";
 import { Card } from "./ui/card";
+import QuickAddButton from "./QuickAddButton";
 
 const ExpensesTable = () => {
   return (
@@ -20,7 +21,7 @@ const ExpensesTable = () => {
         <Flex direction={"column"} alignItems="center" padding={3}>
             <Heading fontSize={20} className="text-light_brown">Recent Expenses</Heading>
         </Flex>
-        <ScrollArea className="h-[300px] w-[500px] rounded-md ">
+        <ScrollArea className="h-[235px] w-[500px] rounded-md ">
             <Table>
                 <TableHeader className="text-base">
                     <TableRow>
@@ -42,6 +43,9 @@ const ExpensesTable = () => {
                 </TableBody>
             </Table>
         </ScrollArea>
+        <Flex direction={"column"} alignItems="center" padding={3}>
+            <QuickAddButton />
+        </Flex>
     </Card>
   )
 }

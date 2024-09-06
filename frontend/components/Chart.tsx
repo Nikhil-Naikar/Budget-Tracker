@@ -50,7 +50,7 @@ export function Chart() {
   }, []);
 
   return (
-    <Card className="flex flex-col sm:w-sm md:w-[400px] border border-dark_brown h-[300px]">
+    <Card className="flex flex-col sm:w-sm md:w-[500px] border border-dark_brown h-[350px]">
       <Flex direction={"column"} alignItems="center" padding={3}>
         <Heading fontSize={20} className="text-light_brown">August 2024</Heading>
       </Flex>
@@ -115,9 +115,9 @@ export function Chart() {
       }
 
       <CardFooter className="flex-col gap-2 text-md text-light_brown">
-        <div className="flex items-center gap-2 font-medium leading-none">
+        <Flex direction={"column"} alignItems="center" padding={3}>
           <Heading fontSize={20} className="text-light_brown">Budget Left: $246</Heading>
-        </div>
+        </Flex>
       </CardFooter>
     </Card>
   )
