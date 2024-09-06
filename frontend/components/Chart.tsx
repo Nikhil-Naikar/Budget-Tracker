@@ -1,6 +1,5 @@
 "use client"
 
-import { TrendingUp } from "lucide-react"
 import {
   Label,
   PolarGrid,
@@ -8,7 +7,6 @@ import {
   RadialBar,
   RadialBarChart,
 } from "recharts"
-
 import {
   Card,
   CardContent,
@@ -17,34 +15,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-
-
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer"
-
-import {
-  Sheet,
-  SheetContent,
-  SheetFooter,
-  SheetClose,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet"
-
-
-
 import { ChartConfig, ChartContainer } from "@/components/ui/chart"
-import { Button } from "@chakra-ui/react"
+import { Button, Flex, Heading } from "@chakra-ui/react"
 import QuickAddForm from "./forms/QuickAddForm"
 import { useEffect, useState } from "react"
 import LoaderSpinner from "./LoaderSpinner"
@@ -78,7 +50,11 @@ export function Chart() {
   }, []);
 
   return (
-    <Card className="flex flex-col sm:w-sm md:w-[400px] border border-dark_brown">
+    <Card className="flex flex-col sm:w-sm md:w-[400px] border border-dark_brown h-[300px]">
+      <Flex direction={"column"} alignItems="center" padding={3}>
+        <Heading fontSize={20} className="text-light_brown">August 2024</Heading>
+      </Flex>
+      
       {loading ? (
         <LoaderSpinner />
       ) : (
@@ -138,37 +114,10 @@ export function Chart() {
       )
       }
 
-      <CardFooter className="flex-col gap-2 text-sm">
+      <CardFooter className="flex-col gap-2 text-md text-light_brown">
         <div className="flex items-center gap-2 font-medium leading-none">
-            Budget Left: $20
+          <Heading fontSize={20} className="text-light_brown">Budget Left: $246</Heading>
         </div>
-        <Sheet>
-          <SheetTrigger className="bg-light_brown text-white rounded-full h-auto w-auto px-4 py-2 hover:border-2 hover:border-white">Quick Add</SheetTrigger>
-          <SheetContent className=" h-[45vh] flex flex-col items-center bg-cream" side={"top"}>
-            <SheetHeader className="flex flex-col items-center justify-center">
-              <SheetTitle>Quick Add</SheetTitle>
-              <SheetDescription>
-                Please select if amount is expense or income
-              </SheetDescription>
-            </SheetHeader>
-            <QuickAddForm/>
-            <SheetFooter>
-              <SheetClose className="flex gap-5">
-                <Button 
-                  bg="light_brown" 
-                  color="white" 
-                  _hover={{ 
-                    border: "2px solid", 
-                    borderColor: "white" 
-                  }} 
-                  border="2px solid transparent" // Ensure default border is transparent
-                >
-                  Submit
-                </Button>
-              </SheetClose>
-            </SheetFooter>
-          </SheetContent>
-        </Sheet>
       </CardFooter>
     </Card>
   )
