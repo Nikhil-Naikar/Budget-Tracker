@@ -25,7 +25,7 @@ const chartData = [
   { category: "Shopping", spent: 520, budget_left: 120 },
   { category: "Entertainment", spent: 140, budget_left: 550 },
   { category: "Utilities", spent: 600, budget_left: 350 },
-  { category: "Eating Out", spent: 480, budget_left: 400 },
+  { category: "Eating Out", spent: 600, budget_left: 400 },
 ]
 
 const chartConfig = {
@@ -45,8 +45,8 @@ export function CategoryGraph() {
       <Flex direction={"column"} alignItems="center" padding={3}>
         <Heading fontSize={20} className="text-light_brown">Catgeories Overview</Heading>
       </Flex>
-      <CardContent>
-        <ChartContainer config={chartConfig}>
+      <CardContent className="p-0">
+        <ChartContainer config={chartConfig} className="h-[300px] w-full">
           <BarChart accessibilityLayer data={chartData}>
             <XAxis
               dataKey="category"
@@ -95,7 +95,7 @@ export function CategoryGraph() {
                       {/* Add this after the last item */}
                       {index === 1 && (
                         <div className="mt-1.5 flex basis-full items-center border-t pt-1.5 text-xs font-medium text-foreground">
-                          Total
+                          {item.payload.category} Limit
                           <div className="ml-auto flex items-baseline gap-0.5 font-mono font-medium tabular-nums text-foreground">
                             {item.payload.spent + item.payload.budget_left}
                             <span className="font-normal text-muted-foreground">
@@ -109,7 +109,7 @@ export function CategoryGraph() {
                 />
               }
               cursor={false}
-              defaultIndex={1}
+              // defaultIndex={1}
             />
           </BarChart>
         </ChartContainer>

@@ -7,7 +7,6 @@ import {
     SheetClose,
     SheetDescription,
     SheetHeader,
-    SheetTitle,
     SheetTrigger,
   } from "@/components/ui/sheet"
 import QuickAddForm from './forms/QuickAddForm';
@@ -19,7 +18,7 @@ const QuickAddButton = () => {
     <div>
       <Sheet>
           <SheetTrigger className="bg-light_brown text-white rounded-full h-auto w-auto px-4 py-2 hover:border-2 hover:border-white">Quick Add</SheetTrigger>
-          <SheetContent className=" h-[40vh] flex flex-col items-center bg-cream" side={"top"}>
+          <SheetContent className=" md:h-[50vh] flex flex-col items-center bg-cream" side={"top"}>
             <SheetHeader className="flex flex-col items-center justify-center">
               <Heading className="text-light_brown">Quick Add</Heading>
               <SheetDescription>
@@ -29,14 +28,8 @@ const QuickAddButton = () => {
             <QuickAddForm/>
             <SheetFooter>
               <SheetClose className="flex gap-5">
-                <Button 
-                  bg="light_brown" 
-                  color="white" 
-                  _hover={{ 
-                    border: "2px solid", 
-                    borderColor: "white" 
-                  }} 
-                  border="2px solid transparent" // Ensure default border is transparent
+                <Button
+                  className="bg-light_brown text-white rounded-full h-auto w-auto px-4 py-2 hover:border-2 hover:border-white text-xl"
                 >
                   Submit
                 </Button>

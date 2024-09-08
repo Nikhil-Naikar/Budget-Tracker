@@ -17,11 +17,11 @@ import QuickAddButton from "./QuickAddButton";
 
 const ExpensesTable = () => {
   return (
-    <Card className="border border-dark_brown">
+    <Card className="border border-dark_brown w-full h-full">
         <Flex direction={"column"} alignItems="center" padding={3}>
-            <Heading fontSize={20} className="text-light_brown">Recent Expenses</Heading>
+            <Heading fontSize={20} className="text-light_brown">View Expenses</Heading>
         </Flex>
-        <ScrollArea className="h-[240px] sm:w-auto sm:px-[50px] md:w-[500px] rounded-md ">
+        <ScrollArea className="h-[240px] px-3 rounded-md">
             <Table>
                 <TableHeader className="text-base">
                     <TableRow>

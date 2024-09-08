@@ -6,9 +6,7 @@ import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
-  CardTitle,
 } from "@/components/ui/card"
 import {
   ChartConfig,
@@ -16,6 +14,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart"
+import { Flex } from "@chakra-ui/react"
 
 export const description = "An interactive bar chart"
 
@@ -81,28 +80,28 @@ export function Graph() {
   )
 
   return (
-    <Card className="border border-dark_brown sm:w-[300px] md:w-full">
-      <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row h-[70px]">
-        <div className="flex">
+    <Card className="border border-dark_brown h-full w-full">
+      <CardHeader className="flex flex-col justify-center space-y-0 border-b p-0 sm:flex-row">
+        <Flex>
           {["expenses", "income"].map((key) => {
             const chart = key as keyof typeof chartConfig
             return (
               <button
                 key={chart}
                 data-active={activeChart === chart}
-                className="relative z-30 flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l data-[active=true]:bg-muted/50 sm:border-l sm:border-t-0 sm:px-8 sm:py-6"
+                className="relative z-30 flex flex-1 flex-col items-center justify-center gap-1 border-t px-1 py-1 text-left even:border-l data-[active=true]:bg-muted/50 sm:border-l sm:border-t-0 sm:px-1 sm:py-1"
                 onClick={() => setActiveChart(chart)}
               >
-                <span className="text-xs text-muted-foreground">
-                  {chartConfig[chart].label}
-                </span>
-                <span className="text-lg font-bold leading-none sm:text-3xl">
-                  {total[key as keyof typeof total].toLocaleString()}
-                </span>
+                  <span className="text-xs text-muted-foreground">
+                    {chartConfig[chart].label}
+                  </span>
+                  <span className="text-lg font-bold leading-none sm:text-3xl">
+                    {total[key as keyof typeof total].toLocaleString()}
+                  </span>
               </button>
             )
           })}
-        </div>
+        </Flex>
       </CardHeader>
       <CardContent className="px-2 sm:p-6">
         <ChartContainer
