@@ -1,6 +1,6 @@
 # Budget Tracker
 
-<img width="946" alt="bt_0" src="https://github.com/user-attachments/assets/b42b275c-dc54-4815-895f-be4e16e61992">
+<img width="1497" alt="bt_0" src="https://github.com/user-attachments/assets/927c9f78-aea7-4dae-ac0b-f318ccc08b64">
 
 ## Tech Stack 🧰
 - TypeScript
