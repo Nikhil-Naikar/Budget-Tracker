@@ -50,7 +50,7 @@ export function Chart() {
   }, []);
 
   return (
-    <Card className="flex flex-col sm:w-sm md:w-[500px] border border-dark_brown h-[350px]">
+    <Card className="flex flex-col sm:w-auto md:w-[500px] border border-dark_brown h-[350px]">
       <Flex direction={"column"} alignItems="center" padding={3}>
         <Heading fontSize={20} className="text-light_brown">August 2024</Heading>
       </Flex>

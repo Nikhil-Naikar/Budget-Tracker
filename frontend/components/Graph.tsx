@@ -20,75 +20,71 @@ import {
 export const description = "An interactive bar chart"
 
 const chartData = [
-  { date: "2024-06-01", desktop: 178, mobile: 200 },
-  { date: "2024-06-02", desktop: 470, mobile: 410 },
-  { date: "2024-06-03", desktop: 103, mobile: 160 },
-  { date: "2024-06-04", desktop: 439, mobile: 380 },
-  { date: "2024-06-05", desktop: 88, mobile: 140 },
-  { date: "2024-06-06", desktop: 294, mobile: 250 },
-  { date: "2024-06-07", desktop: 323, mobile: 370 },
-  { date: "2024-06-08", desktop: 385, mobile: 320 },
-  { date: "2024-06-09", desktop: 438, mobile: 480 },
-  { date: "2024-06-10", desktop: 155, mobile: 200 },
-  { date: "2024-06-11", desktop: 92, mobile: 150 },
-  { date: "2024-06-12", desktop: 492, mobile: 420 },
-  { date: "2024-06-13", desktop: 81, mobile: 130 },
-  { date: "2024-06-14", desktop: 426, mobile: 380 },
-  { date: "2024-06-15", desktop: 307, mobile: 350 },
-  { date: "2024-06-16", desktop: 371, mobile: 310 },
-  { date: "2024-06-17", desktop: 475, mobile: 520 },
-  { date: "2024-06-18", desktop: 107, mobile: 170 },
-  { date: "2024-06-19", desktop: 341, mobile: 290 },
-  { date: "2024-06-20", desktop: 408, mobile: 450 },
-  { date: "2024-06-21", desktop: 169, mobile: 210 },
-  { date: "2024-06-22", desktop: 317, mobile: 270 },
-  { date: "2024-06-23", desktop: 480, mobile: 530 },
-  { date: "2024-06-24", desktop: 132, mobile: 180 },
-  { date: "2024-06-25", desktop: 141, mobile: 190 },
-  { date: "2024-06-26", desktop: 434, mobile: 380 },
-  { date: "2024-06-27", desktop: 448, mobile: 490 },
-  { date: "2024-06-28", desktop: 149, mobile: 200 },
-  { date: "2024-06-29", desktop: 103, mobile: 160 },
-  { date: "2024-06-30", desktop: 446, mobile: 400 },
-]
+  { date: "2024-08-01", expenses: 178, income: 0 },
+  { date: "2024-08-02", expenses: 470, income: 0 },
+  { date: "2024-08-03", expenses: 103, income: 0 },
+  { date: "2024-08-04", expenses: 439, income: 0 },
+  { date: "2024-08-05", expenses: 88, income: 0 },
+  { date: "2024-08-06", expenses: 294, income: 0 },
+  { date: "2024-08-07", expenses: 323, income: 0 },
+  { date: "2024-08-08", expenses: 385, income: 315 }, // First biweekly income
+  { date: "2024-08-09", expenses: 438, income: 0 },
+  { date: "2024-08-10", expenses: 155, income: 0 },
+  { date: "2024-08-11", expenses: 92, income: 0 },
+  { date: "2024-08-12", expenses: 492, income: 0 },
+  { date: "2024-08-13", expenses: 81, income: 0 },
+  { date: "2024-08-14", expenses: 426, income: 0 },
+  { date: "2024-08-15", expenses: 307, income: 0 },
+  { date: "2024-08-16", expenses: 371, income: 315 }, // Second biweekly income
+  { date: "2024-08-17", expenses: 475, income: 0 },
+  { date: "2024-08-18", expenses: 107, income: 0 },
+  { date: "2024-08-19", expenses: 341, income: 0 },
+  { date: "2024-08-20", expenses: 408, income: 0 },
+  { date: "2024-08-21", expenses: 169, income: 0 },
+  { date: "2024-08-22", expenses: 317, income: 0 },
+  { date: "2024-08-23", expenses: 480, income: 315 }, // Third biweekly income
+  { date: "2024-08-24", expenses: 132, income: 0 },
+  { date: "2024-08-25", expenses: 141, income: 0 },
+  { date: "2024-08-26", expenses: 434, income: 0 },
+  { date: "2024-08-27", expenses: 448, income: 0 },
+  { date: "2024-08-28", expenses: 149, income: 0 },
+  { date: "2024-08-29", expenses: 103, income: 0 },
+  { date: "2024-08-30", expenses: 446, income: 315 }, // Fourth biweekly income
+];
+
+
 
 const chartConfig = {
   views: {
-    label: "Page Views",
+    label: "Amount",
   },
-  desktop: {
-    label: "Desktop",
+  expenses: {
+    label: "Expenses",
     color: "hsl(var(--chart-1))",
   },
-  mobile: {
-    label: "Mobile",
+  income: {
+    label: "Income",
     color: "hsl(var(--chart-2))",
   },
 } satisfies ChartConfig
 
 export function Graph() {
   const [activeChart, setActiveChart] =
-    React.useState<keyof typeof chartConfig>("desktop")
+    React.useState<keyof typeof chartConfig>("expenses")
 
   const total = React.useMemo(
     () => ({
-      desktop: chartData.reduce((acc, curr) => acc + curr.desktop, 0),
-      mobile: chartData.reduce((acc, curr) => acc + curr.mobile, 0),
+      expenses: chartData.reduce((acc, curr) => acc + curr.expenses, 0),
+      income: chartData.reduce((acc, curr) => acc + curr.income, 0),
     }),
     []
   )
 
   return (
-    <Card className="border border-dark_brown w-[1000px]">
-      <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row">
-        <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
-          <CardTitle>Bar Chart - Interactive</CardTitle>
-          <CardDescription>
-            Showing total visitors for the last 3 months
-          </CardDescription>
-        </div>
+    <Card className="border border-dark_brown sm:w-[300px] md:w-full">
+      <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row h-[70px]">
         <div className="flex">
-          {["desktop", "mobile"].map((key) => {
+          {["expenses", "income"].map((key) => {
             const chart = key as keyof typeof chartConfig
             return (
               <button

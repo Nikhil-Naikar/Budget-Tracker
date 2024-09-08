@@ -2,42 +2,38 @@
 
 import { Flex, Grid, Heading } from "@chakra-ui/react";
 import Chart from "@/components/Chart";
-import moneyBag from "@/public/icons/money-bag.png"
-import Image from "next/image";
 import Graph from "@/components/Graph";
-import { ScrollArea } from "@/components/ui/scroll-area"
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
 import ExpensesTable from "@/components/ExpensesTable";
+import CategoryGraph from "@/components/CategoryGraph";
 
 const Home = () => {
 
   return (
     <div className="flex flex-col gap-5 py-5">
-      <Flex direction={"column"} alignItems="center" paddingBottom={5}>
-        <Heading className="text-light_brown">August 2024</Heading>
+      <Flex direction={"column"} alignItems="center">
+        <Heading className="text-light_brown">Good morning Ent</Heading>
       </Flex>
       
       <section id="quick-summary">
-        <Grid templateColumns='repeat(2, 1fr)'>
+        <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)'}} height={350} gap={5}>
           <Flex direction={"column"} alignItems="center">
             <Chart />
           </Flex>
           <Flex direction={"column"} alignItems="center">
-            <ExpensesTable />
+            <CategoryGraph />
           </Flex>
         </Grid>
       </section>
 
-      <section id="graph">
-        <Flex direction={"column"} alignItems="center">
+      <section id="expenses_overview">
+        <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)'}} height={350} gap={5}>
+          <Flex direction={"column"} alignItems="center">
           <Graph />
-        </Flex>
+          </Flex>
+          <Flex direction={"column"} alignItems="center" padding={5}>
+            <ExpensesTable />
+          </Flex>
+        </Grid>
       </section>
     </div>
     
