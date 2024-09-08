@@ -9,9 +9,10 @@ import CategoryGraph from "@/components/CategoryGraph";
 const Home = () => {
 
   return (
-    <div className="flex flex-col gap-5 px-3">
+    <div className="flex flex-col gap-5 px-3 custom-sm-width md:w-full">
       <Flex direction={"column"} alignItems="center">
-        <Heading className="text-light_brown">Welcome Ent</Heading>
+        <Heading className="text-light_brown">Welcome Afluu</Heading>
+        <p className="text-light_brown text-lg">August Budget Summary</p>
       </Flex>
       
       <section id="quick-summary">

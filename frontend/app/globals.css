@@ -8,6 +8,13 @@
   box-sizing: border-box;
 }
 
+@media (max-width: 640px) {
+  .custom-sm-width {
+    width: 350px;
+  }
+}
+
+
 
 @layer base {
   :root {
