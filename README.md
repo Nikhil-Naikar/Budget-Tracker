@@ -15,6 +15,7 @@
 
 ## Views 🧐
 **HomePage:**
-<img width="946" alt="bt_0" src="https://github.com/user-attachments/assets/b42b275c-dc54-4815-895f-be4e16e61992">
+<img width="1497" alt="bt_0" src="https://github.com/user-attachments/assets/de919a0b-3ee2-4ed2-b5c3-02501dd4a6ef">
+
 
 ## More coming soon, currently building 🏗️
