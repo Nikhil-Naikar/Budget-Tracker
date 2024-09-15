@@ -1,1 +1,1 @@
-GET http://localhost:5144
+GET http://localhost:5144/expenses

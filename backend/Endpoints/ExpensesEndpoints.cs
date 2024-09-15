@@ -5,10 +5,11 @@ namespace backend.Endpoints;
 
 public static class ExpensesEndpoints
 {
-    public static WebApplication MapExpensesEndpoints(this WebApplication app)
+    public static RouteGroupBuilder MapExpensesEndpoints(this WebApplication app)
     {
-        app.MapGet("/", () => DummyData.Expenses).WithName("GetExpenses");
-        return app;
+        var group = app.MapGroup("/expenses");
+        group.MapGet("/", () => DummyData.Expenses).WithName("GetExpenses");
+        return group;
         
     }
 }
