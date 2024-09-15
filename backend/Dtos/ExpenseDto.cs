@@ -3,7 +3,7 @@ using System;
 namespace backend.Dtos;
 
 //record instead of class because it is immutable
-public record ExpenseDto(
+public record class ExpenseDto(
     string Name,
     string Type,
     string? Description,
